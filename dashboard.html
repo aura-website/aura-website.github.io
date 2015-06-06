@@ -122,24 +122,46 @@
 					<form method="get" class="form-horizontal">
 							<div class="form-group"><label class="col-sm-6 control-label">Enable Sharing</label>
 
-									<div class="col-sm-6"><div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" class="i-checks" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div></div>
-							</div>
-							<div class="form-group"><label class="col-sm-6 control-label">Internet billing cycle start date</label>
-
-									<div class="col-sm-6"><input type="text" class="form-control" value="3">
-									</div>
-							</div>
-							<div class="form-group"><label class="col-sm-6 control-label">Data for sharing per month</label>
-
 									<div class="col-sm-6">
-										<div class="input-group m-b"><input type="text" class="form-control" value="30"> <span class="input-group-addon">GB</span></div>
+										<input type="checkbox" class="i-checks"/>
 									</div>
 							</div>
-							<div class="form-group"><label class="col-sm-6 control-label">Sharing data already used in current month</label>
+							<hr/>
+							<div class="row">
+								<div class="col-sm-1"></div>
+								<div class="form-group col-sm-5">
+										<div class="row">
+											<label class="control-label col-sm-9">Billing cycle start date</label>
+											<div class="col-sm-3">
+												<input type="text" class="form-control" value="3">
+											</div>
+										</div>
+										<div class="row">
+											<label class="control-label font-light text-center">Days past in current cycle</label>
+											<div class="progress m-t-xs progress-striped active full">
+														<div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class=" progress-bar progress-bar-warning">
+																15
+														</div>
+												</div>
+										</div>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="form-group col-sm-5">
+										<div class="row">
+											<label class="control-label col-sm-7">Data sharing per cycle</label>
+											<div class="col-sm-5">
+												<div class="input-group"><input type="text" class="form-control" value="30"> <span class="input-group-addon">GB</span></div>
+											</div>
+										</div>
+										<label class="control-label font-light">Sharing data consumed in current cycle</label>
+										<div class="progress m-t-xs progress-striped active full">
+													<div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class=" progress-bar progress-bar-danger">
+															28 GB
+													</div>
+											</div>
 
-									<div class="col-sm-6">
-										<div class="input-group m-b"><input type="text" class="form-control" value="15" disabled> <span class="input-group-addon">GB</span></div>
-									</div>
+
+								</div>
 							</div>
 							<label class="font-light">List of Aura users connected to your wifi now</label><br/>
 							<div class="table-responsive">
@@ -172,11 +194,11 @@
                     </tbody>
                 </table>
               </div>	
-							<div class="form-group">
+							<!--<div class="form-group">
 									<div class="col-sm-8 col-sm-offset-2">
 											<button class="btn btn-primary" type="submit">Save changes</button>
 									</div>
-							</div>
+							</div>-->
 							</form>					
 				</div><!-- panel-body -->
 			<div><!-- hpanel -->
