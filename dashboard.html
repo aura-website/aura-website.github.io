@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="http://webapplayers.com/homer_admin-v1.6/vendor/bootstrap/dist/css/bootstrap.css">
 
     <!-- App styles -->
-    <link rel="stylesheet" href="http://webapplayers.com/homer_admin-v1.6/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" href="http://webapplayers.com/homer_admin-v1.6/fonts/pe-icon-7-stroke/css/helper.css">
     <link rel="stylesheet" href="http://webapplayers.com/homer_admin-v1.6/styles/style.css">
 
@@ -59,7 +59,13 @@
         <div class="small-logo">
             <span class="text-primary">HOMER APP</span>
         </div>
-				<h2 style="margin-top:0; padding-top:10px">Dashboard</h2>
+				<div class="navbar-right">
+            <ul class="nav navbar-nav no-borders">
+                <li class="dropdown">
+                    <a href="login.html">Logout</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </div>
 
@@ -116,7 +122,8 @@
 							</h2>
 					</div>
 			</div>
-
+	</div>
+	<div class="content">
 			<div class="hpanel hgreen">
 				<div class="panel-body">
 					<form method="get" class="form-horizontal">
