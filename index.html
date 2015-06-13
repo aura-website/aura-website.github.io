@@ -71,14 +71,10 @@
 								<div id="get-started-step-1">
 									<h4 class="text-center text-success">Can you install Aura on your router ?</h4>
 									<p>If you have installed <a href="#" class="text-info">openwrt</a> / <a href="#" class="text-info">ddwrt</a> / <a href="#" class="text-info">gargoyle</a> on your router, you can install <span class="text-success">Aura package</span> easily.</p>
-									<hr/>
-									<div class="row">
-											<div class="col-md-6 text-center">
-													<button class="btn btn-success" onclick="showNext(1)">Yes, show me the steps</button>
-											</div>
-											<div class="col-md-6 text-left">
-													<button class="btn btn-info" onclick="showNext(2)">No, but I am willing to buy <br/>Aura router for $20</button>
-											</div>
+									<div class="text-center">
+										<hr/>
+										<button class="btn btn-success" style="margin-right:10px" onclick="showNext(1)">Yes, show me the steps</button>
+										<button class="btn btn-info" style="margin-top:10px" onclick="showNext(2)">No, but I am willing to buy <br/>Aura router for $20</button>
 									</div>
 								</div>
 								<div id="get-started-step-2" style="display:none">
@@ -117,12 +113,6 @@
       </div>
   </div>
 
-<script>
-	function showNext(option) {
-		$("#get-started-step-1").hide();
-		$("#get-started-step-2").show();
-	}
-</script>
 
 <header id="page-top" style="margin-bottom:0">
     <div class="container">
@@ -359,6 +349,7 @@
 <script src="./js/icheck.min.js"></script>
 <script src="./js/index.js"></script>
 <script src="./js/jquery.highlight.js"></script>
+<script src="./js/jquery.cookie.js"></script>
 
 <!-- Local script for menu handle -->
 <!-- It can be also directive -->
@@ -384,8 +375,33 @@
 				$('span').highlight('Aura');
 				$('a').highlight('Aura');
 				$('h3').highlight('Aura');
+
+				if ($.cookie("get-started-step-1-done")) {
+					$("#get-started-step-1").hide();
+					$("#get-started-step-2").show();
+				}
     });
 </script>
 
+<script>
+	function showNext(option) {
+		ga('send', 'event', 'get-started', 'choice', option);
+		$.cookie("get-started-step-1-done", 1);
+		$("#get-started-step-1").hide();
+		$("#get-started-step-2").show();
+	}
+</script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-64073171-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </body></html>
