@@ -73,8 +73,8 @@
 									<p>If you have installed <a href="#" class="text-info">openwrt</a> / <a href="#" class="text-info">ddwrt</a> / <a href="#" class="text-info">gargoyle</a> on your router, you can install <span class="text-success">Aura package</span> easily.</p>
 									<div class="text-center">
 										<hr/>
-										<button class="btn btn-success" style="margin-right:10px" onclick="showNext(1)">Yes, show me the steps</button>
-										<button class="btn btn-info" style="margin-top:10px" onclick="showNext(2)">No, but I am willing to buy <br/>Aura router for $20</button>
+										<button class="btn btn-success" style="margin-right:10px" onclick="showNext('install-steps')">Yes, show me the steps</button>
+										<button class="btn btn-info" style="margin-top:10px" onclick="showNext('buy-router')">No, but I am willing to buy <br/>Aura router for $20</button>
 									</div>
 								</div>
 								<div id="get-started-step-2" style="display:none">
@@ -385,7 +385,7 @@
 
 <script>
 	function showNext(option) {
-		ga('send', 'event', 'get-started', 'choice', option);
+		ga('send', 'event', 'get-started', option);
 		$.cookie("get-started-step-1-done", 1);
 		$("#get-started-step-1").hide();
 		$("#get-started-step-2").show();
