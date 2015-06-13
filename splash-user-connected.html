@@ -81,14 +81,10 @@
             <div class="stats-label text-color">
                 <span class="font-extra-bold font-uppercase">Ashish Sharma</span>
 
-                
-
-                <div id="sparkline1" class="small-chart m-t-sm"></div>
-                <div>
-                    <h4 class="font-extra-bold m-b-xs">
+                    <h1 class="font-extra-bold m-b-xs">
                         20 GB
-                    </h4>
-                    <small class="text-muted">Your <span class="text-success">Karma GB<span>.</small>
+                    </h1>
+                    <small class="text-muted">Your <span class="text-success">Karma GB</span> quota</small>
                 </div>
             </div>
         </div>
@@ -119,13 +115,13 @@
                 <div class="hpanel">
                     <div class="panel-body">
                         <div class="stats-title pull-left">
-                            <h4>Current Bandwidth</h4>
+                            <h4>Your Current Bandwidth</h4>
                         </div>
                         <div class="stats-icon pull-right">
-                            <i class="pe-7s-monitor fa-4x"></i>
+                            <i class="pe-7s-signal fa-4x"></i>
                         </div>
                         <div class="m-t-xl">
-                            <h1 class="text-success">1.2 Mbps</h1>
+                            <h1 class="text-success">7.1 Mbps</h1>
                             <small>
 																Currently 3 Aura users are connected on this network. The network is on for past 20 days
                             </small>
@@ -140,7 +136,7 @@
                             <h4>Available Data at this router</h4>
                         </div>
                         <div class="stats-icon pull-right">
-                            <i class="pe-7s-monitor fa-4x"></i>
+                            <i class="pe-7s-download fa-4x"></i>
                         </div>
                         <div class="m-t-xl">
                             <h1 class="text-success">24 GB</h1>
@@ -153,24 +149,68 @@
             </div>
 		</div><!-- row -->	
 		<div class="row">
-					<div class="col-md-12 animated-panel zoomIn" style="-webkit-animation-delay: 0.4s;">
-                <div class="hpanel hgreen">
-									<div class="panel-body">
-												<div class="stats-title pull-left">
-                            <h4>Data Used In Current Session</h4>
+			<div class="col-md-12 animated-panel zoomIn" style="-webkit-animation-delay: 0.4s;">
+			 <div class="hpanel hgreen">
+            <!--<div class="panel-heading">
+                <div class="panel-tools">
+                    <a class="showhide"><i class="fa fa-chevron-up"></i></a>
+                    <a class="closebox"><i class="fa fa-times"></i></a>
+                </div>
+                Dashboard information and statistics
+            </div>-->
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3 text-center">
+                        <div class="stats-title text-center">
+                            <h4><i class="fa fa-laptop"></i> Data Used</h4>
                         </div>
-                        <div class="stats-icon pull-right">
-                            <i class="pe-7s-monitor fa-4x"></i>
+                        <!--<div class="small">
+                            <i class="fa fa-bolt"></i> Page views
+                        </div>-->
+												<div class="m-t-xl">
+                            <h1 class="text-success">20 MB</h1>
+                            <small>Your <span class="text-success">Karma GB</span> used in this session</small>
                         </div>
-												 <div class="m-t-xl">
-                            <h1 class="text-success">30 MB</h1>
-                            <small>
-															You are connected for past 2 hours
-                            </small>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="stats-title text-center">
+                            <h4> <i class="fa fa-bolt"></i> Your speed history in current session (Mbps)</h4>
                         </div>
-                  </div>                    
+                        <!--<div class="text-center small">
+                            <i class="fa fa-laptop"></i> Active users in current month (December)
+                        </div>-->
+                        <div class="flot-chart" style="height: 160px">
+                            <div class="flot-chart-content" id="flot-line-chart"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="stats-title text-center">
+                            <h4> <i class="fa fa-clock-o"></i> Active duration</h4>
+                        </div>
+                        <!--<div class="small">
+                            <i class="fa fa-clock-o"></i> Active duration
+                        </div>-->
+												<div class="m-t-xl">
+                            <h1 class="text-success">2 hours </h1>
+                            <small>and 40 minutes</small>
+                        </div>
+                        <!--<div>
+                            <h1 class="font-extra-bold m-t-xl m-b-xs">
+                                10 Months
+                            </h1>
+                            <small>And four weeks</small>
+                        </div>-->
+                    </div>
                 </div>
             </div>
+            <!--<div class="panel-footer">
+                    <span class="pull-right">
+                          You have two new messages from <a href="">Monica Bolt</a>
+                    </span>
+                Last update: 21.05.2015
+            </div>-->
+        </div>			
+			</div>
 		</div><!-- row -->	
 	</div>
 </div>
@@ -185,6 +225,10 @@
 <script src="./homer_files/icheck.min.js"></script>
 <script src="./homer_files/index.js"></script>
 <script src="./homer_files/jquery.highlight.js"></script>
+<script src="./homer_files/jquery-flot/jquery.flot.js"></script>
+<script src="./homer_files/jquery-flot/jquery.flot.resize.js"></script>
+<script src="./homer_files/jquery-flot/curvedLines.js"></script>
+<script src="./homer_files/jquery-flot/jquery.flot.spline.js"></script>
 
 <!-- App scripts -->
 <script src="./homer_files/homer.js"></script>
@@ -213,6 +257,35 @@
 				$('span').highlight('Aura');
 				$('a').highlight('Aura');
 				$('h3').highlight('Aura');
+
+				/**
+         * Flot charts data and options
+         */
+        var data1 = [ [0, 5.5], [1, 4.8], [2, 4.0], [3, 3.6], [4, 4.0], [5, 6.0], [6, 5.0], [7, 5.1], [8,7.0] ];
+
+        var chartUsersOptions = {
+            series: {
+                splines: {
+                    show: true,
+                    tension: 0.4,
+                    lineWidth: 1,
+                    fill: 0.4
+                },
+            },
+            grid: {
+                tickColor: "#f0f0f0",
+                borderWidth: 1,
+                borderColor: 'f0f0f0',
+                color: '#6a6c6f'
+            },
+            colors: [ "#62cb31"],
+						xaxis: {
+							ticks: [[0,'-2:20'],[1,'-2 hr'],[2,'-1:40'],[3,'-1:20'],[4,'-1:10'],[5,'-1 hr'],[6,'-40 m'],[7,'-20 m'],[8,'now']]
+						}
+        };
+
+        $.plot($("#flot-line-chart"), [data1], chartUsersOptions);
+
     });
 </script>
 
