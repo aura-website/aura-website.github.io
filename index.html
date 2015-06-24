@@ -21,7 +21,7 @@
     <!-- App styles -->
     <link rel="stylesheet" href="./fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
     <link rel="stylesheet" href="./fonts/pe-icon-7-stroke/css/helper.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css">		
 
 </head>
 
@@ -62,7 +62,7 @@ img.bottom-space {
                 <li><a class="page-scroll" page-scroll="" href="#how-it-works">How it Works</a></li>
                 <li><a class="page-scroll" page-scroll="" href="#features">Features</a></li>
                 <li><a class="page-scroll" page-scroll="" href="#contact">Questions ?</a></li>
-                <li><button class="btn btn-success navbar-brand" data-toggle="modal" data-target="#my-modal">Get Started</button></li>
+                <li><button class="btn btn-success navbar-brand get-started" >Get Started</button></li>
             </ul>
         </div>
     </div>
@@ -114,6 +114,9 @@ img.bottom-space {
 						
 								</div>
               </div>
+							<div class="modal-footer">
+										<button class="btn btn-primary" onclick="showNext('not-interested')">I dont want to take the hassle :-(</button>
+							</div>
           </div>
       </div>
   </div>
@@ -134,7 +137,7 @@ img.bottom-space {
             <p class="small">
                 Lorem Ipsum is simply dummy text of the printing and tLorem Ipsum is  Lorem Ipsum is simply dummy of the simply dummy text of the ypesetting.
             </p> -->
-            <a href="#" data-toggle="modal" data-target="#my-modal" class="btn btn-success btn-lg">Get Started</a>
+            <a href="#" class="btn btn-success btn-lg get-started">Get Started</a>
             <a href="#how-it-works" class="btn btn-primary btn-lg page-scroll">Learn More</a>
         </div>
     </div>
@@ -483,17 +486,27 @@ img.bottom-space {
 				if ($.cookie("get-started-step-1-done")) {
 					$("#get-started-step-1").hide();
 					$("#get-started-step-2").show();
+					$(".modal-footer").hide();
 				}
 				$(".vertical-center").flexVerticalCenter();
+				$(".get-started").click(function() {
+						mixpanel.track('get-started')
+						$("#my-modal").modal()
+				})
     });
 </script>
 
 <script>
 	function showNext(option) {
-		ga('send', 'event', 'get-started', option);
+		mixpanel.track(option)
 		$.cookie("get-started-step-1-done", 1);
-		$("#get-started-step-1").hide();
-		$("#get-started-step-2").show();
+		if (option == "not-interested")
+			$("#my-modal").modal('hide')
+		else {
+			$("#get-started-step-1").hide();
+			$("#get-started-step-2").show();
+			$(".modal-footer").hide();
+		}
 	}
 </script>
 
@@ -506,7 +519,13 @@ img.bottom-space {
 
   ga('create', 'UA-64073171-1', 'auto');
   ga('send', 'pageview');
+		
+	//Mixpanel
+	(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("437f6da33d6eff5804b3987e9de802e9");
 
+	mixpanel.track('page-view');
 </script>
 
 </body></html>
