@@ -490,7 +490,8 @@ img.bottom-space {
 				}
 				$(".vertical-center").flexVerticalCenter();
 				$(".get-started").click(function() {
-						mixpanel.track('get-started')
+						if (!$.cookie("get-started-step-1-done"))
+							mixpanel.track('get-started')
 						$("#my-modal").modal()
 				})
     });
