@@ -58,6 +58,7 @@ paginate_path: "blog/page:num/"
 
 # BUILD SETTINGS
 markdown: kramdown
+encoding: utf-8
 highlighter: pygments
 sass:
   sass_dir: _sass
