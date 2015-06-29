@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Sitemap
-permalink: /sitemap/
 ---
 ###Compare Internet Service Providers 
 [Best broadband internet service provider in Bangalore](/gyan/best-broadband-internet-service-provider-bangalore/)
