@@ -43,19 +43,3 @@ If you want to save the hassle, we will do all the installation & ship the route
 ### Add your favorite provider below
 
 If you have found this article helpful, do let us know which provider you chose & why in the comments below. If you think something is wrong in the article, feel free to point it & we will correct it ASAP.
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-		/* * * CONFIGURATION VARIABLES * * */
-		var disqus_shortname = 'griggi';
-		var disqus_identifier = 'best-internet-provider-bangalore';
-		
-		/* * * DON'T EDIT BELOW THIS LINE * * */
-		(function() {
-				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-

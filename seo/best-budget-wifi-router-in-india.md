@@ -65,19 +65,3 @@ Now the best part. We can install Griggi on the router & give it to you for the 
 If you think there is a better budget router than the TP Link one we suggested above, do let us know through a comment below. We will evaluate it & update the article if we really think it is the best out there. 
 
 Also, if you have a feature request, or if there is something that is stopping you from trying Griggi, do let us know by dropping a comment below. 
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-		/* * * CONFIGURATION VARIABLES * * */
-		var disqus_shortname = 'griggi';
-		var disqus_identifier = 'best-budget-wifi-router-in-india';
-		
-		/* * * DON'T EDIT BELOW THIS LINE * * */
-		(function() {
-				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-

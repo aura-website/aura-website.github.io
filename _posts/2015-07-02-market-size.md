@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How big is the market
+excerpt: Today we are faced with a question which we did not know an answer upfront. We have figured some numbers & we would need your help to validate the number.
 ---
 <p style="text-align:center">
 	<i class="fa fa-pie-chart fa-6" style="font-size: 20em; color: #62cb31"></i>
@@ -32,4 +33,4 @@ Later in the day, we thought of estimating it a different way. Griggi is typical
 
 This looks like small market for now, but guess looking at the way it is growing in developing countries, one could expect it to grow at a phenomenal rate.  
 
-What do you guys think ? Do the numbers look good ?  
+What do you guys think ? Do the numbers look good ? Let us know by commenting below. 
