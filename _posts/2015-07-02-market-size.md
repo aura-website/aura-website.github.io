@@ -31,6 +31,6 @@ Later in the day, we thought of estimating it a different way. Griggi is typical
 
  As per [NDTV report](http://indianexpress.com/article/technology/technology-others/3g-finally-becomes-mainstream-in-india-report/), 3G consumption in India in Dec 2014 is 85 Petabytes. That is 85 million GBs in a month which is 1 billion GBs in an year. Worldwide, this should be around 5 billion GBs. Total revenue $25 billion (assuming $5 per Karma GB on an average).
 
-This looks like small market for now, but guess looking at the way it is growing in developing countries, one could expect it to grow at a phenomenal rate.  
+This looks like small market for now compared to [600 billion dollar advertisement industry](http://www.emarketer.com/Article/Advertisers-Will-Spend-Nearly-600-Billion-Worldwide-2015/1011691), but guess looking at the way it is growing in developing countries, one could expect it to grow at a phenomenal rate. The advertisement industry is growing at much slower rate of around 4-5% per year. 
 
-What do you guys think ? Do the numbers look good ? Let us know by commenting below. 
+What do you guys think ? Do the numbers look good ? If you could let us know your thoughts, it would be an appreciated help.
