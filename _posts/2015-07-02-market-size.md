@@ -13,7 +13,7 @@ The problem that we intend to solve through Griggi is
 
 The solution that we conceptualized has another problem. It involves a **significant effort from the neighbour who unfortunately is not the one with the problem**. So why would he/she install Griggi unless the needy neighbour ends up gifting Griggi router to him/her.
 
-There is also the fragmentation problem - someone might install Griggi hoping someone might somebody use it & eventually he/she would make money, while a needy person might look for Griggi at a place when none of the guys is offering their WiFi to others through Griggi. This issue was also evident from the [hacker news comments](https://news.ycombinator.com/item?id=9776501) & [comments on our home page](http://griggi.com#contact)
+There is also the fragmentation problem - someone might install Griggi hoping somebody might use it & eventually he/she would make money, while a needy person might be looking for Griggi at a place when none of the guys is offering their WiFi. This issue was also evident from the [hacker news comments](https://news.ycombinator.com/item?id=9776501) & [comments on our home page](http://griggi.com#contact)
 
 We knew that we would need to solve this problem in a more **focussed** manner. We decided that a good way to get started is to target cafes & convince them to have Griggi as way to provide free WiFi to their consumers. 
 
