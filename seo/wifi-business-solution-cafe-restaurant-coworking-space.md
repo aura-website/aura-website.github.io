@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Share WiFi with your users through Griggi
-permalink: /gyan/wifi-business-solution-cafe-restaurant-coworking-space/
+permalink: /wifi-business-solution-cafe-restaurant-coworking-space/
 ---
 
 For business, sharing WiFi has been an expensive affair with people selling all kind of 'solutions' & charging hefty money. The tech involved is pretty straight forward & we at Griggi feel that someone has to **standardize** the process & bring down the cost.
