@@ -14,7 +14,7 @@ For business, sharing WiFi has been an expensive affair with people selling all 
 
 **3. No sharing password** - Griggi provides an **open WiFi** to which only Griggi registered users can connect. A new user can register with Griggi by connecting to your Griggi WiFi. Dont worry, we have built-in abuse control & open WiFi does not mean WiFi up for abuse. 
 
-**4. User data monitoring** - We do a book keeping of every user & sites they browse. Users need to register with their mobile phone number so they can be tracked. This is in accordance with Indian laws for WiFi sharing. 
+**4. User data monitoring** - We do a book keeping of every user. Users need to register with their mobile phone number so they can be tracked. This is in accordance with Indian laws for WiFi sharing. 
 
 **5. Extremely user friendly** - We have built innovative ways to ensure your users have a great experience using your WiFi. They get to see the speed they are getting upfront, their data quota etc. Details on [our home page](/)
 
