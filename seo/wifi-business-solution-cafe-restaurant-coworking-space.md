@@ -38,17 +38,52 @@ Through Griggi, anybody could share their WiFi with people around either for fre
 
 **6. Redeem accumulated paid data** at end of every month through your Griggi dashboard. Eg. if total accumulated paid data in your account is 5 GB, you can redeem it for Rs 5k as you had put Rs 100 per 100 MB data. 
 
+#### Cafe Partners
+
+<style>
+  #cafe-partner img {
+    width:300px;
+  }
+</style>
+
+<table style="width:100%" id="cafe-partner">
+  <tr>
+    <td><img src="http://toit.in/wp-content/themes/toit/images/toit-logo.png"/></td>
+    <td><img src="http://thebungalows.in/assets/user_images/logos/original/Logonew000+1439023288.jpg"/></td>
+    <td><img src="http://girik-images3.s3.amazonaws.com/vuelounge_1393670630.jpg"/></td>
+  </tr>
+</table>
+
+<section id="coworking"></section>
+
 ### Coworking space owners
 
-The steps are same as that of cafe/restaurant owner except that you probably do not want to provision for free WiFi. You may like to specify only paid quota & no free WiFi quota. You could aim at your users who come in for a day or two or probably just couple of hours. 
+Griggi at a co-working space can serve you in following ways 
 
-Assuming you have Rs 300 per day pass & if you think a user typically would consume 100 MB of internet in a day, put a price of Rs 300 for 100 MB data. The approach has following advantages :-
+1. **Features of expensive router on much cheaper hardware** - most expensive routers (in the range of INR 10k) have support for 100+ users, can provide guest WiFi & some other features. Apart from that, co-working space may additionally invest in firewalls, proxy servers etc. All these features are built into Griggi & Griggi can be installed on a [router as cheap as Rs 800](http://www.amazon.in/TP-Link-TL-WR740N-Wireless-Router-white/dp/B002WBX7TQ).<br/><br/> This router will not be able to support more than 25 users in your premise though. You would need [a Rs 3.7k TP Link Griggi compliant router for 50-100 users](http://www.amazon.in/TP-Link-TL-WR1043ND-300Mbps-Wireless-Gaming/dp/B002YLAUU8/ref=sr_1_1?s=computers&ie=UTF8&qid=1457841013&sr=1-1&keywords=1043ND). Beyond that, you would need [Rs 10k Ubiquiti router](http://www.amazon.in/EdgeRouter-ERLite-3-512MB-Ethernet-Router/dp/B00CPRVF5K/ref=sr_1_1?s=computers&ie=UTF8&qid=1457841060&sr=1-1&keywords=ubiquiti+edgerouter). The router can support 500+ users. <br/><br/>*Note that we are considering at least 2 device per user. So 500+ users means 1000+ connections*
 
-* Nobody has to do a book keeping of your non-regular users
-* Your non-regular users wont feel like they are being watched for the time they are spending at your place.
-* No payment collection hassle. They top up their account from their Griggi dashboard & you redeem their used internet data with us at end of every month. 
+2. **Friendlier User Interface** - Most expensive routers have interface designed for system administrators. Griggi exposes relevant features in a web 2.0ish way, easier for non-techie coworking space owners to configure. In-fact, some of the features are exposed on the cloud, so the coworking space owners could look at stats on the go, on their mobile phone.
 
-<section id="form"></section>
+3. **Data abuse control without MAC address** - Most expensive routers let you allocate data to IP or MAC address. Griggi mandates users to login with their mobile number & you could allocate data to the user through his mobile number. Now if the user is having 10 device, he would still need to login with his mobile number & data limit will enforce on all devices *collectively*. You do not have to worry about adding user device MAC address either.
+
+4. **Load balancing & Fail-over** - Most coworking spaces have 2 internet lines, typically as fail-over. They usually have 2 SSIDs broadcasting, one for each line. Griggi powered routers can take 2 internet lines as input. You could assign percent division like main internet line taking 80% of traffic & smaller 20%. When any of the link goes down, Griggi will automatically start using the other line for 100% of traffic. 
+
+5. **Users checkin-checkout book keeping** - Its a govt. mandate to log when your users checkin & checkout of your premise. Griggi automatically logs in the known user/device when they connect to the WiFi.
+
+#### Coworking partners
+<style>
+  #coworking-partner img {
+    width:400px;
+  }
+</style>
+
+<table style="width:100%" id="coworking-partner">
+  <tr>
+    <td><img src="http://sneed.in/images/headerlogo.png"/></td>
+    <td><img src="http://greenbubbles.in/gb/wp-content/uploads/2016/02/Logo_web_small-1.png"/></td>
+  </tr>
+</table>
+
 
 ## Want Griggi ? 
 
