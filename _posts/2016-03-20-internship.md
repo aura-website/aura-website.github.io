@@ -13,7 +13,7 @@ About Griggi (http://griggi.com):
 
 **Internship in software development**
 
-# of Internships available: 2
+Internships available: 2
 Stipend: 20,000/- per month
 About the role:
 The selected intern will work on following: 
@@ -25,14 +25,14 @@ The selected intern will work on following:
 **Who can apply:**
 
 > 1. Working knowledge of PHP frameworks, C & Linux. 
-> 2. Understanding of how Ethernet/WiFi Routers work is a definite plus but not mandatory. 
-> 3. Expertise is not mandatory but willingness to lean quickly and do fast prototypes of features is. Expectation is that intern will be solving problems on their own by reading up, google search etc.
+> 2. Understanding of how Ethernet/WiFi routers work is a definite plus but not mandatory. 
+> 3. Expertise is not mandatory but to learn quickly on your own and do fast prototype of asked features is. Expectation is that you will be solving problems on your own by reading up, google search etc.
 
-Additional Information:
+**Additional Information:**
 
-> Intern will be working from home but should ideally be located in Bangalore. 
-> Intern will need to have a decent laptop and broadband internet connection.
-> Intern will have to come to meet up face to face every 2-3 days at specified location in Bangalore, in a Cafe/Co-working space.
+> You will be working from home but should ideally be located in Bangalore. 
+> You should have a decent laptop and broadband internet connection.
+> You will be meeting us face to face every 2-3 days at specified location in Bangalore, in a Cafe/Co-working space.
 
 
 **Internship in sales**
