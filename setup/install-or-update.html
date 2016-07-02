@@ -1,0 +1,42 @@
+---
+title: Step 1 - Select router model
+permalink: /setup/install-or-update/
+layout: setup
+---
+<script>
+  $('h2').html('Step 3. Install or Upgrade ?')
+  $('.normalheader li:nth-child(3)').addClass("text-success")
+</script>
+    <a class="list-group-item active" href="" style="margin-bottom:20px">
+       <h5 class="list-group-item-heading">Router model selected <span class="text-success"><script>document.write(getUrlVar('model'))</script></span> with hardware version <span class="text-success"><script>document.write(getUrlVar('make'))</script></span></h5>
+    </a>
+     
+     <div class="row">
+         <div class="col-md-6">
+           <a href="/setup/install-instructions/?model=<script>document.write(getUrlVar('model'))</script>&make=<script>document.write(getUrlVar('make'))</script>">
+             <div class="hpanel">
+                 <div class="panel-body text-center">
+                    <i class="fa fa-5x pe-7s-check" style="font-size:300px" ></i>
+                     <div class="m-t-sm">
+                         <strong>First time install</strong>
+                         <p class="small">Select this option if you have never installed Openwrt or Griggi before on the router.</p>
+                     </div>
+                 </div>
+             </div>
+           </a>
+        </div>
+        <div class="col-md-6">
+           <a href="/setup/upgrade-instructions/?model=<script>document.write(getUrlVar('model'))</script>&make=<script>document.write(getUrlVar('make'))</script>">
+             <div class="hpanel">
+                 <div class="panel-body text-center">
+                    <i class="fa fa-5x pe-7s-refresh" style="font-size:300px" ></i>
+                     <div class="m-t-sm">
+                         <strong>Upgrade</strong>
+                         <p class="small">Select this option if you have earlier installed Openwrt, Griggi or any other opensource router OS (gargoyle, tomato) on your router.</p>
+                     </div>
+                 </div>
+             </div>
+           </a>
+        </div>
+ 
+     </div>

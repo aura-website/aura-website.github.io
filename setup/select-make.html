@@ -1,0 +1,42 @@
+---
+title: Step 1 - Select router model
+permalink: /setup/select-make/
+layout: setup
+---
+<script>
+  $('h2').html('Step 2. Select Hardware Version')
+  $('.normalheader li:nth-child(2)').addClass("text-success")
+</script>
+    <a class="list-group-item active" href="" style="margin-bottom:20px">
+       <h5 class="list-group-item-heading">Select hardware version for <span class="text-success"><script>document.write(getUrlVar('model'))</script></span></h5>
+       <p>The hardware version is mentioned on the sticker on the back of the router. Use the reference pictures below.</p>
+    </a>
+        {% for model in site.data.make.models %}
+        <div id="{{model.id}}" style="display:none">
+         {% for make in model.make %}
+         {% assign loopindex = forloop.index | modulo: 2 %}
+           {% if loopindex == 1 %}
+           <div class="row">
+           {% endif %}
+            <div class="col-md-6">
+              <a href="{% if make.url %}{{make.url}}{% else %}/setup/install-or-update/?model={{model.id}}&make={{make.id}}{% endif %}">
+               <div class="hpanel">
+                   <div class="panel-body text-center">
+                      <img alt="logo" src="/images/{{make.image}}" style="height:300px; max-width:100%">
+                       <div class="m-t-sm">
+                           <strong>{{make.name}} <span class="text-success">{{make.code}}</span></strong>
+                           <p class="small">{{make.desc}}</p>
+                       </div>
+                   </div>
+               </div>
+               </a>
+            </div>
+          {% if loopindex == 0 or forloop.last %}
+           </div><!-- row -->
+          {% endif %}
+        {% endfor %}
+        </div><!-- id - model.id -->
+       {% endfor %}
+  <script>
+  document.getElementById(getUrlVar('model')).style.display = "block"
+ </script>

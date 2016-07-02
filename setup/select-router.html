@@ -1,0 +1,36 @@
+---
+title: Step 1 - Select router model
+permalink: /setup/
+layout: setup
+---
+<script>
+  $('h2').html('Step 1. Select Router')
+  $('.normalheader li:nth-child(1)').addClass("text-success")
+</script>
+    <a class="list-group-item active" href="" style="margin-bottom:20px">
+       <h5 class="list-group-item-heading">Select your router from below</h5>
+       <p>Griggi can be installed on any Openwrt supported router but for some we provide readymade firmware that you could download & directly flash on your router.</p>
+       <p class="list-group-item-text">Pro Tip - To figure out the exact model of your router, flip it & try looking for the model number code on the sticker. The model number code is <span class="text-success">highlighted in green</span> in the names below.</p>
+    </a>
+        {% for model in site.data.router.models %}
+         {% assign loopindex = forloop.index | modulo: 2 %}
+           {% if loopindex == 1 %}
+     <div class="row">
+           {% endif %}
+          <div class="col-md-6">
+            <a href="{{model.url}}">
+             <div class="hpanel">
+                 <div class="panel-body text-center">
+                    <img alt="logo" src="/images/{{model.image}}" style="height:300px; max-width:100%">
+                     <div class="m-t-sm">
+                         <strong>{{model.name}} <span class="text-success">{{model.code}}</span></strong>
+                         <p class="small">{{model.desc}}</p>
+                     </div>
+                 </div>
+             </div>
+             </a>
+          </div>
+           {% if loopindex == 0 %}
+     </div><!-- row -->
+           {% endif %}
+         {% endfor %}

@@ -13,15 +13,16 @@
     <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
 
     <!-- Vendor styles -->
-    <link rel="stylesheet" href="./css/font-awesome.css">
-    <link rel="stylesheet" href="./css/metisMenu.css">
-    <link rel="stylesheet" href="./css/animate.css">
-    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/metisMenu.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
 
     <!-- App styles -->
-    <link rel="stylesheet" href="./fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" href="./fonts/pe-icon-7-stroke/css/helper.css">
-    <link rel="stylesheet" href="./css/style.css">		
+    <link rel="stylesheet" href="/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css">
+    <link rel="stylesheet" href="/fonts/pe-icon-7-stroke/css/helper.css">
+    <link rel="stylesheet" href="/css/style.css">		
+    <script src="/js/jquery.min.js"></script>
 
 </head>
 
@@ -71,14 +72,39 @@ img.bottom-space {
 
 <div id="wrapper">
 
-  <div class="normalheader transition animated fadeIn">
+ <style>
+    .row img {
+        height: 300px;
+        max-width: 100%;
+    }
+    .treeslider {
+        overflow-x:hidden;
+        position:relative;
+        min-height:200px;
+        height: 1000px;
+    }
+    .treecontent {
+        position:absolute;
+        left:0;
+        width: 100%;
+    }
+ </style>
+ 
+ <script>
+  function getUrlVar(key){
+      var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search); 
+        return result && unescape(result[1]) || ""; 
+  }
+ </script>
+
+<div class="normalheader transition animated fadeIn">
         <div class="hpanel">
             <div class="panel-body">
                 <div id="hbreadcrumb" class="pull-right m-t-lg">
                     <ol class="hbreadcrumb breadcrumb">
-                        <li class="active"><span>Select Router</span></li>
+                        <li><span>Select Router</span></li>
                         <li>
-                            <span>Select Make</span>
+                            <span>Select Hardware Version</span>
                         </li>
                         <li>
                             <span>Update or Install</span>
@@ -89,74 +115,17 @@ img.bottom-space {
                     </ol>
                 </div>
                 <h2 class="font-light m-b-xs">
-                    Step 1 - Select Router
                 </h2>
                 <small>Step by step Griggi setup instructions</small>
             </div>
-        </div>
+        </div>  
    </div>
-  
-  <div class="content">
-    <a class="list-group-item active" href="" style="margin-bottom:20px">
-       <h5 class="list-group-item-heading">Select your router from below</h5>
-       <p class="list-group-item-text">Griggi can be installed on any Openwrt supported router but for some we provide readymade firmware that you could download & install.</p>
-    </a>
+ 
+ <div class="treeslider">
+  	<div class="content treecontent">
+		{{content}}
      <div class="row">
-        
-        <div class="col-md-6">
-             <div class="hpanel">
-                 <div class="panel-body text-center">
-                    <img alt="logo" src="images/erlite.jpg" style="height:300px">
-                     <div class="m-t-sm">
-                         <strong>Ubiquiti EdgeRouter Lite 3</strong>
-                         <p class="small">Enterprise grade router to support till 500 users</p>
-                     </div>
-                 </div>
-             </div>
-          </div>
-
-         <div class="col-md-6">
-             <div class="hpanel">
-                 <div class="panel-body text-center">
-                    <img alt="logo" src="images/1043nd.png" style="height:300px">
-                     <div class="m-t-sm">
-                         <strong>TP Link 1043 ND</strong>
-                         <p class="small">Long range router from TP Link for handling 30-50 users</p>
-                     </div>
-                 </div>
-             </div>
-          </div>
-         
-      </div>
-      <div class="row">
-        
-        <div class="col-md-6">
-             <div class="hpanel">
-                 <div class="panel-body text-center">
-                    <img alt="logo" src="images/841n.png" style="height:300px">
-                     <div class="m-t-sm">
-                         <strong>TP Link 841N</strong>
-                         <p class="small">Double antenna mediume range home router</p>
-                     </div>
-                 </div>
-              </div>
-          </div>
-  
-        <div class="col-md-6">
-             <div class="hpanel">
-                 <div class="panel-body text-center">
-                    <img alt="logo" src="images/740n.png" style="height:300px">
-                     <div class="m-t-sm">
-                         <strong>TP Link 740n</strong>
-                         <p class="small">Cheapest Openwrt supported router</p>
-                     </div>
-                 </div>
-             </div>
-         </div>
-
-     </div><!-- row -->
-     <div class="row">
-        <div class="offset-3 col-md-6">
+        <div class="col-md-offset-3 col-md-6">
              <div class="hpanel">
                  <div class="panel-body text-center">
                     <i class="fa fa-5x fa-question-circle" style="font-size:300px" ></i>
@@ -167,21 +136,13 @@ img.bottom-space {
                  </div>
              </div>
         </div>
-
      </div>
-  </div> <!-- content -->
+  	</div>
+ </div><!-- treeslider -->
 </div><!-- wrapper -->
 
-<script src="./js/jquery.min.js"></script>
-<script src="./js/jquery-ui.min.js"></script>
-<script src="./js/jquery.slimscroll.min.js"></script>
-<script src="./js/bootstrap.min.js"></script>
-<script src="./js/metisMenu.min.js"></script>
-<script src="./js/icheck.min.js"></script>
-<script src="./js/index.js"></script>
-<script src="./js/jquery.highlight.js"></script>
-<script src="./js/jquery.cookie.js"></script>
-<script src="./js/jquery.flexverticalcenter.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 
 
 </body></html>
