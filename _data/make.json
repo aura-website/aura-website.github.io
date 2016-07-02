@@ -1,0 +1,32 @@
+{
+  models: [
+    {   id: "TP-Link-TL-WR1043ND",
+        make: [
+                    { id: "v3",
+                       code: "version 3", image: "1043nd-v1.png", desc: "Routers bought after 2015 are v3"
+                    },
+                    {id: "v2",
+                      code: "version 2", image: "1043nd-v2.jpg", desc: "Routers bought before 2015 are v2"
+                    }
+               ]
+    },
+    {   id: "TP-Link-TL-WR841N",
+        make: [
+                    { id: "v11",
+                       code: "version 11", image: "841n-v11.jpg", desc: "Routers bought after 2015 are v3"
+                    },
+                    {id: "v10",
+                      code: "version 10", image: "841n-v10.jpg", desc: "Routers bought before 2015 are v2"
+                    }
+               ]
+    },
+    {   id: "TP-Link-TL-WR740N",
+        make: [
+                    { id: "v5",
+                       code: "version 5", image: "740n-v5.jpg", desc: "Routers bought after 2015 are v3"
+                    }
+               ]
+    }
+  ]
+}
+
