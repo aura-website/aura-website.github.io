@@ -22,7 +22,7 @@ layout: setup
               <a href="{% if make.url %}{{make.url}}{% else %}/setup/install-or-update/?model={{model.id}}&make={{make.id}}{% endif %}">
                <div class="hpanel">
                    <div class="panel-body text-center">
-                      <img alt="logo" src="/images/{{make.image}}" style="height:300px; max-width:100%">
+                      <img alt="logo" src="/images/setup/{{model.id}}-{{make.id}}.jpg">
                        <div class="m-t-sm">
                            <strong>{{make.name}} <span class="text-success">{{make.code}}</span></strong>
                            <button class="btn btn-success btn-sm">Select</button>

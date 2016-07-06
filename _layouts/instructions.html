@@ -1,0 +1,38 @@
+---
+title: Step 4 - Instructions
+permalink: /setup/tp-link/
+layout: setup
+---
+<script>
+  if (getUrlVar('mode') == "install")
+    $('h2').html('Step 4. Install Instructions')
+  else
+    $('h2').html('Step 4. Upgrade Instructions')
+
+  $('.normalheader li:nth-child(4').addClass("text-success")
+</script>
+    
+<div class="row">
+
+  <div class="col-lg-12">
+    
+    <div class="hpanel blog-article-box">
+      
+       <div class="panel-heading">
+        <div class="row">
+          <div class="pull-left">
+            <h4><script>document.write(getUrlVar('model'))</script></h4>
+            <small>Hardware Version <script>document.write(getUrlVar('make'))</script></small>
+          </div>
+          <div class="pull-right">
+            <img alt="logo" src="/images/{{site.}}" style="height:300px; max-width:100%">
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+      {{ content }}
+      </div>
+   </div><!-- hpanel -->
+ </div><!-- col-lg-12 -->
+</div><!-- row -->     
+

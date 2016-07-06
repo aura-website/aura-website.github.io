@@ -28,15 +28,6 @@
 
 <body class="landing-page">
 
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
 <style>
 @font-face {
   font-family: 'Variane';
@@ -54,7 +45,18 @@ img.shadow {
 img.bottom-space {
 	margin-bottom:40px
 }
+
 </style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
         <a href="/" class="navbar-brand" style="background-color:white; font-size: 3em; font-family: 'Variane'; font-weight: 100; color: #62cb31">Griggi</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -95,19 +97,43 @@ img.bottom-space {
       var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search); 
         return result && unescape(result[1]) || ""; 
   }
+  $(document).ready(function() {
+      $("a").addClass('text-info')
+  })
  </script>
+
 
 <div class="normalheader transition animated fadeIn">
         <div class="hpanel">
             <div class="panel-body">
                 <div id="hbreadcrumb" class="pull-right m-t-lg">
                     <ol class="hbreadcrumb breadcrumb">
-                        <li><span>Select Router</span></li>
                         <li>
-                            <span>Select Hardware Version</span>
+                          <script>
+                            if (getUrlVar('model'))
+                              document.write("<a href='/setup/select-router/'>Select Router</a>")
+                            else
+                              document.write("<span>Select Router</span>")
+                          </script>
                         </li>
                         <li>
-                            <span>Update or Install</span>
+                          <script>
+                            var model = getUrlVar('model')
+                            if (model && getUrlVar('make'))
+                              document.write("<a href='/setup/select-make/?model="+model+"'>Select Hardware Version</a>")
+                            else
+                              document.write("<span>Select Hardware Version</span>")
+                          </script>
+                        </li>
+                        <li>
+                          <script>
+                            var model = getUrlVar('model')
+                            var make = getUrlVar('make')
+                            if (model && make && getUrlVar('mode'))
+                              document.write("<a href='/setup/install-or-update/?model="+model+"&make="+make+"'>Install or Update</a>")
+                            else
+                              document.write("<span>Install or Update</span>")
+                          </script>
                         </li>
                         <li>
                             <span>Instructions</span>

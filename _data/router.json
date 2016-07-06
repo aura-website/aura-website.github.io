@@ -1,16 +1,16 @@
 {
   models: [
       {id: "erlite-3", 
-        name: "Ubiquiti EdgeRouter Lite", code: "ERLite-3", image: "erlite.jpg", desc: "Enterprise grade router to support 500 users", url: "/setup/install-or-update/?model=Ubiquiti-EdgeRouter-Lite-3"
+        name: "Ubiquiti EdgeRouter Lite", code: "ERLite-3", image: "Ubiquiti-EdgeRouter-Lite-ERLite-3", desc: "Enterprise grade router to support 500 users", url: "/setup/install-or-update/?model=Ubiquiti-EdgeRouter-Lite-ERLite-3"
       },
       {id: "tl-wr1043nd",
-        name: "TP Link", code: "TL-WR1043ND", image: "1043nd.png", desc: "Long range router. Can handle 30-50 users", url: "/setup/select-make/?model=TP-Link-TL-WR1043ND"
+        name: "TP Link", code: "TL-WR1043ND", image: "TP-Link-TL-WR1043ND", desc: "Long range router. Can handle 30-50 users", url: "/setup/select-make/?model=TP-Link-TL-WR1043ND"
        },
       {id: "tl-wr841n", 
-        name: "TP Link", code: "TL-WR841N", image: "841n.png", desc: "Double antenna router, good for 10-15 users", url: "/setup/select-make/?model=TP-Link-TL-WR841N"
+        name: "TP Link", code: "TL-WR841N", image: "TP-Link-TL-WR841N", desc: "Double antenna router, good for 10-15 users", url: "/setup/select-make/?model=TP-Link-TL-WR841N"
       },
       {id: "tl-wr740n",
-        name: "TP Link", code: "TL-WR740N", image: "740n.png", desc: "Cheapest Openwrt supported router", url: "/setup/select-make/?model=TP-Link-TL-WR740N"
+        name: "TP Link", code: "TL-WR740N", image: "TP-Link-TL-WR740N", desc: "Cheapest Openwrt supported router", url: "/setup/select-make/?model=TP-Link-TL-WR740N"
       }
    ]
 }
