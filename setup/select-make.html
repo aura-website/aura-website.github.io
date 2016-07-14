@@ -1,30 +1,31 @@
 ---
-title: Step 1 - Select router model
+title: Step 3 - Select Hardware Version
 permalink: /setup/select-make/
 layout: setup
 ---
 <script>
-  $('h2').html('Step 2. Select Hardware Version')
-  $('.normalheader li:nth-child(2)').addClass("text-success")
+  $('h2').html('Step 3. Select Hardware Version')
+  $('.normalheader li:nth-child(3)').addClass("text-success")
 </script>
     <a class="list-group-item active" href="" style="margin-bottom:20px">
-       <h5 class="list-group-item-heading">Select hardware version for <span class="text-success"><script>document.write(getUrlVar('model'))</script></span></h5>
+       <h5 class="list-group-item-heading">Select hardware version for <span class="text-success"><script>document.write(getUrlVar('brand')+" "+getUrlVar('model'))</script></span></h5>
        <p>The hardware version is mentioned on the sticker on the back of the router. Use the reference pictures below.</p>
     </a>
-        {% for model in site.data.make.models %}
-        <div id="{{model.id}}" style="display:none">
+        {% for brand in site.data.router.brands %}
+        {% for model in brand.models %}
+        <div id="{{model.name | replace: ' ','-'}}" style="display:none">
          {% for make in model.make %}
          {% assign loopindex = forloop.index | modulo: 2 %}
            {% if loopindex == 1 %}
            <div class="row">
            {% endif %}
             <div class="col-md-6">
-              <a href="{% if make.url %}{{make.url}}{% else %}/setup/install-or-update/?model={{model.id}}&make={{make.id}}{% endif %}">
+              <a href="{% if make.url %}{{make.url}}{% else %}/setup/install-or-update/?brand={{brand.name | replace: ' ','-'}}&model={{model.name|replace: ' ','-'}}&make={{make.name}}{% endif %}">
                <div class="hpanel">
                    <div class="panel-body text-center">
-                      <img alt="logo" src="/images/setup/{{model.id}}-{{make.id}}.jpg">
+                      <img alt="logo" src="/images/setup/{{brand.name | replace: ' ','-'}}-{{model.name | replace: ' ','-'}}-{{make.name}}.jpg">
                        <div class="m-t-sm">
-                           <strong>{{make.name}} <span class="text-success">{{make.code}}</span></strong>
+                           <strong><span class="text-success">{{make.code}}</span></strong>
                            <button class="btn btn-success btn-sm">Select</button>
                            <p class="small">{{make.desc}}</p>
                        </div>
@@ -38,6 +39,7 @@ layout: setup
         {% endfor %}
         </div><!-- id - model.id -->
        {% endfor %}
+       {% endfor %}
   <script>
-  document.getElementById(getUrlVar('model')).style.display = "block"
+  document.getElementById(getUrlVar('model').replace(' ','-')).style.display = "block"
  </script>

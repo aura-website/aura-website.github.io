@@ -1,0 +1,215 @@
+---
+title: Instructions to setup Griggi on TP Link 1043ND
+permalink: /setup/TP-Link/
+layout: instructions
+---
+
+<div class="panel-body">
+        <i class="fa fa-chevron-down pull-right text-muted"></i>
+        <a data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+            <h5>1. Download Griggi Firmware & Configuration files</h5>
+        </a>
+    <div  class="panel-collapse collapse">
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Download Griggi Firmware for this router & hardware version</p>
+            <div style="text-align:center">
+              <a id="factory-image" class="btn btn-danger">Download Griggi Firmware</a>
+            </div>
+            <hr/>
+            <p>To download Griggi configuration file, you need to login at Griggi with your mobile phone number.</p>
+            <div style="text-align:center">
+              <a href="//app.griggi.com" class="btn btn-danger" target="_blank">Login at Griggi</a>
+            </div>
+            <br/>
+            <p> The subsequent step ask you to enter OTP sent to your phone. Post that, you need to specify your email & password for subsequent access.</p>
+            <p>Completed the steps ? Congrats, you are now successfully registered on Griggi.</p>
+          </div>
+          <div class="col-md-8">
+            <img src="/images/setup/griggi-app-login.png"/>
+          </div>
+       </div>
+       <hr/>
+       <div class="row">
+        <div class="col-md-8">
+          <img src="http://placehold.it/800x600"/>
+        </div>
+        <div class="col-md-4">
+          <p>Post login, navigate to <b>Setup</b> option in the left sidebar</p>
+          <p>Click on <b>Add Router</b>. Post adding the router, click on <b>Download Configuration</b> for the router you just created.</p>
+          <p>Keep both files handy as they will be needed on the next step(s).</p>
+        </div>
+       </div>
+       
+    </div>
+</div>
+<div class="panel-body">
+        <i class="fa fa-chevron-down pull-right text-muted"></i>
+        <a data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+            <h5>2. Login to router dashboard</h5>
+        </a>
+    <div  class="panel-collapse collapse">
+        <hr>
+        <div class="row">
+          <div class="col-md-4 center">
+            <p>You need to be in same network as your router.</p>
+            <p>Access router admin dashboard by typing <b>http://192.168.0.1</b> on your browser.</p>
+            <div class="well">
+              <p>Default username password for your router is printed on the sticker at the back of the router.</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p><img src="http://www.zerodollartips.com/wp-content/uploads/2016/02/login-into-tp-link-router.jpg"/></p>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-8">
+            <p><img src="http://m.setuprouter.com/router/tp-link/tl-wr720n/status-3300.jpg"/></p>
+          </div>
+          <div class="col-md-4 center">
+            <p>Post login, the dashboard looks as shown.</p>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-body">
+        <i class="fa fa-chevron-down pull-right text-muted"></i>
+        <a data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+            <h5>3. Install Griggi Firmware on the router</h5>
+        </a>
+    <div  class="panel-collapse collapse">
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Look for <b>System Tools</b> on left sidebar. Under the option, there is <b>Firmware Upgrade</b></p>
+            <p>Click on <b>Browse</b> on the Firmware Upgrade screen, locate the file named <b><script>document.write(getUrlVar('brand')+"-"+getUrlVar('model')+"-"+getUrlVar('make'))</script>.bin</b> that you downloaded in step 1 & press <b>Upgrade</b></p>
+            <div class="well">
+              <p><span class="label label-danger">Note</span>&nbsp;Make sure that the power to the router does not go off after pressing upgrade for at least 1 minute, else your router will get bricked (a technical term to indicate a dead router).</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <p><img src="http://www.tp-link.com/resources/images/faq/20101026112448117.jpg"/></p>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-8">
+            <p><img src="https://www.digitalreplica.org/assets/2014-10-10-pocket-internet-privacy-shield/tplink_install_openwrt_07.png"/></p>
+          </div>
+          <div class="col-md-4">
+            <p>If you are seeing image like this, this step is done</p>
+            <p>The WiFi SSID name is now changed to <b>griggi</b>. It is an open WiFi & you do not need any password to connect to it. You should cross check if the new WiFi SSID is available once the upgrade is successfully completed & router has rebooted.</p>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="panel-body">
+        <i class="fa fa-chevron-down pull-right text-muted"></i>
+        <a data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+            <h5>4. Upload Griggi Configuration to the router</h5>
+        </a>
+    <div  class="panel-collapse collapse">
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <p>The default WiFi SSID created is named <b>griggi</b>. Locate the new WiFi & connect to it.</p>
+            <p>Griggi dashboard is located at <b>http://192.168.7.1</b>. Navigate to the url on your browser.</p>
+            <p>Default user is <b>root</b> & <b>there is no password set</b>. So leave the password field empty & login.</p>
+          </div>
+          <div class="col-md-8">
+            <img src="http://placehold.it/800x600"/>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-8">
+            <p><img src="https://www.loganmarchione.com/wp-content/uploads/2014/10/20141018_023.png"/></p>
+          </div>
+          <div class="col-md-4">
+            <p>Under <b>System</b> option, navigate to <b>Backup/Flash Firmware</b> option.</p>
+            <p>Click on 'Choose File' next to <b>Restore Backup</b>, locate <b>config_<script>document.write(getUrlVar('brand')+"-"+getUrlVar('model')+"-"+getUrlVar('make')+".tar.gz")</script></b> downloaded in step 1 & then click on <b>Upload Archive</b> to apply your Griggi configuration on the router.</p>
+            <p>Post config upload, the router will reboot.</p>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="panel-body">
+        <i class="fa fa-chevron-down pull-right text-muted"></i>
+        <a data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+            <h5>5. Secure your router by setting password</h5>
+        </a>
+    <div  class="panel-collapse collapse">
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Griggi WiFi is open by default. You should set a password for your admin dashboard to prevent unauthorized changes to your router settings.</p>
+            <p>Connect to <b>griggi</b> WiFi, access <b>http://192.168.7.1</b> & set password as instructed on the top of the page.</p>
+          </div>
+          <div class="col-md-8">
+            <p><img src="http://www.putdispenserhere.com/wp-content/uploads/Rooter_Set_Password.png"/></p>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel-body">
+        <i class="fa fa-chevron-down pull-right text-muted"></i>
+        <a data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+            <h5>6. Tweak internet connection settings</h5>
+        </a>
+    <div  class="panel-collapse collapse">
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <p>If your internet provider has a login page that requires you to login every morning (or whenever there is a substantially long inactivity on your internet), you have a PPPoE internet connection. <b>If this is not the case, you may skip this step</b>.</p>
+            <p>Login to your router dashboard, navigate to <b>Network</b> - <b>Interfaces</b> - <b>WAN</b>. Set <b>Protocol</b> as <b>PPPoE</b>. Enter the username & password provided by ISP below it.</b></p>
+            <p>Once done, click on <b>Save & Apply</b> to apply the changes.</p>
+          </div>
+          <div class="col-md-8">
+            <p><img src="http://4.bp.blogspot.com/-7jtPOdJhwqg/UI07EmX13SI/AAAAAAAAD1A/tme6hqz2o50/s1600/openwrt-wan.png"/></p>
+          </div>
+        </div>
+        <hr/>
+    </div>
+</div>
+<div class="panel-body">
+        <i class="fa fa-chevron-down pull-right text-muted"></i>
+        <a data-toggle="collapse" data-parent="#accordion"  aria-expanded="true">
+            <h5>7. Configure Data Sharing</h5>
+        </a>
+    <div  class="panel-collapse collapse">
+        <hr>
+        <div class="row">
+          <div class="col-md-4">
+            <p>You are all set to connect & test your internet connection.</p>
+            <p>By default, a login popup comes up on your device when you connect first time to Griggi. If it does not come up, navigate to <b>griggi.com</b> in your device browser & you will automatically get redirected.</p>
+          </div>
+          <div class="col-md-8">
+            <img src="http://placehold.it/800x600"/>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-8">
+            <img src="http://placehold.it/800x600"/>
+          </div>
+          <div class="col-md-4">
+            <p>Post login, you will see that you do not have quota to use internet. Fret not, you need to first configure data quota at the router before you could start to use the internet.</p>
+            <p>Expand Griggi on the left sidebar to reveal a <b>Configure</b> option hidden under it. You should be able to configure billing cycle & FUP limit on the page.</p>
+          </div>
+        </div>
+        <hr/>
+        <div class="row">
+          <div class="col-md-4">
+            <p>Come back to <b>Status</b> option & you would see that you have got data in your quota. <b>The internet should start to work now for you</b>. You can test the same by opening any other site on a new tab in your device browser.</p>
+            <p>You can go ahead & <b>Give Data</b> to others who eventually be able to use the internet at your location.</p>
+          </div>
+          <div class="col-md-8">
+            <img src="http://placehold.it/800x600"/>
+          </div>
+       </div>
+    </div>
+</div>

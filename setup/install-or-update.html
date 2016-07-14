@@ -4,15 +4,16 @@ permalink: /setup/install-or-update/
 layout: setup
 ---
 <script>
-  $('h2').html('Step 3. Install or Upgrade ?')
-  $('.normalheader li:nth-child(3)').addClass("text-success")
+  $('h2').html('Step 4. Install or Update ?')
+  $('.normalheader li:nth-child(4)').addClass("text-success")
   $(document).ready(function(){
-    $("#install-instructions").attr("href","/setup/install-instructions/?model="+getUrlVar('model')+"&make="+getUrlVar('make'))
-    $("#upgrade-instructions").attr("href","/setup/upgrade-instructions/?model="+getUrlVar('model')+"&make="+getUrlVar('make'))
+    var url = "/setup/"+getUrlVar('brand').replace(' ','-')+"/?brand="+getUrlVar('brand')+"&model="+getUrlVar('model')+"&make="+getUrlVar('make')
+    $("#install-instructions").attr("href", url+"&mode=install")
+    $("#update-instructions").attr("href",url+"&mode=update")
   })
 </script>
     <a class="list-group-item active" href="" style="margin-bottom:20px">
-       <h5 class="list-group-item-heading">Router model selected <span class="text-success"><script>document.write(getUrlVar('model'))</script></span> with hardware version <span class="text-success"><script>document.write(getUrlVar('make'))</script></span></h5>
+       <h5 class="list-group-item-heading">Router model selected <span class="text-success"><script>document.write(getUrlVar('brand')+" "+getUrlVar('model'))</script></span> with hardware version <span class="text-success"><script>document.write(getUrlVar('make'))</script></span></h5>
     </a>
      
      <div class="row">
@@ -30,7 +31,7 @@ layout: setup
            </a>
         </div>
         <div class="col-md-6">
-           <a id="upgrade-instructions">
+           <a id="update-instructions">
              <div class="hpanel">
                  <div class="panel-body text-center">
                     <i class="fa fa-5x pe-7s-refresh" style="font-size:300px" ></i>

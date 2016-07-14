@@ -1,38 +1,59 @@
 ---
-title: Step 4 - Instructions
-permalink: /setup/tp-link/
 layout: setup
 ---
 <script>
-  if (getUrlVar('mode') == "install")
-    $('h2').html('Step 4. Install Instructions')
-  else
-    $('h2').html('Step 4. Upgrade Instructions')
+  $(document).ready(function(){
+    if (getUrlVar('mode') == "install"){
+      $('h2').html('Step 5. Install Instructions')
+      $("h4.m-t-none").html("Installing Griggi <span class='text-success'>first time</span> on <span class='text-success'>"+getUrlVar('brand')+" "+getUrlVar('model')+" "+getUrlVar('make'))
+    }
+    else {
+      $('h2').html('Step 5. Upgrade Instructions')
+      $("h4.m-t-none").html("Upgrading Griggi on <span class='text-success'>"+getUrlVar('brand')+" "+getUrlVar('model')+" "+getUrlVar('make'))
+    }
 
-  $('.normalheader li:nth-child(4').addClass("text-success")
+    $('.normalheader li:nth-child(5)').addClass("text-success")
+    $("#product-image").attr("src","/images/setup/"+getUrlVar("brand")+"-"+getUrlVar("model")+".jpg")
+    $("#factory-image").attr("href","/firmware/images/factory/"+getUrlVar("brand")+"-"+getUrlVar("model")+"-"+getUrlVar("make")+".bin")
+    $(".col-md-8 img").addClass("img-thumbnail")
+  })
 </script>
-    
-<div class="row">
-
-  <div class="col-lg-12">
-    
-    <div class="hpanel blog-article-box">
-      
-       <div class="panel-heading">
-        <div class="row">
-          <div class="pull-left">
-            <h4><script>document.write(getUrlVar('model'))</script></h4>
-            <small>Hardware Version <script>document.write(getUrlVar('make'))</script></small>
-          </div>
-          <div class="pull-right">
-            <img alt="logo" src="/images/{{site.}}" style="height:300px; max-width:100%">
-          </div>
-        </div>
+<style>
+  .panel-collapse img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .panel-body p {
+    color: inherit;
+  }
+  .panel-group .row {
+    display: flex;
+    align-items: center;
+  }
+  .panel-group .panel-body {
+    margin-bottom:25px;
+  }
+</style>
+<div class="hpanel panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+  <div class="panel-body" style="cursor:auto">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-2" style="text-align:center">
+        <img id="product-image" src="" style="width:200px; max-width:100%; height:auto"/>
       </div>
-      <div class="panel-body">
-      {{ content }}
-      </div>
-   </div><!-- hpanel -->
- </div><!-- col-lg-12 -->
-</div><!-- row -->     
+      <div class="col-md-5">
+         <h4 class="m-t-none m-b-none" style="margin-top:10px">..Please Wait..</h4><br/>
+         <small><span class="text-success">Time required for this exercise - 15 min</span><br/>Follow the instructions step by step below. Each step has instructions which is revealed by clicking on the respective step</small>
+       </div>
+    </div>
+  </div>
+	{{ content }}
+</div>
 
+<script>
+    var count = 1
+    $(".panel-group .panel-body").each(function(){
+      $(this).find("a").first().attr("href","#q"+count)
+      $(this).find(".panel-collapse").attr("id","q"+count)
+      count++
+    })
+</script>

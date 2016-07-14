@@ -48,7 +48,7 @@ img.bottom-space {
 
 </style>
 
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default" style="margin-bottom:0">
     <div class="container">
         <div class="navbar-header">
             <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
@@ -79,16 +79,8 @@ img.bottom-space {
         height: 300px;
         max-width: 100%;
     }
-    .treeslider {
-        overflow-x:hidden;
-        position:relative;
-        min-height:200px;
-        height: 1000px;
-    }
-    .treecontent {
-        position:absolute;
-        left:0;
-        width: 100%;
+    .content .col-md-6 .hpanel .panel-body:hover {
+      border: 2px solid #3498db
     }
  </style>
  
@@ -97,40 +89,52 @@ img.bottom-space {
       var result = new RegExp(key + "=([^&]*)", "i").exec(window.location.search); 
         return result && unescape(result[1]) || ""; 
   }
-  $(document).ready(function() {
-      $("a").addClass('text-info')
+  $(document).ready(function(){
+      $("#hbreadcrumb a").addClass("text-info")
   })
  </script>
 
+<script>
+   var brand = getUrlVar('brand')
+   var model = getUrlVar('model')
+   var make = getUrlVar('make')
+   var mode = getUrlVar('mode')
+</script>
 
-<div class="normalheader transition animated fadeIn">
+<div class="normalheader transition animated fadeIn" style="padding-top:40px;">
         <div class="hpanel">
             <div class="panel-body">
                 <div id="hbreadcrumb" class="pull-right m-t-lg">
                     <ol class="hbreadcrumb breadcrumb">
                         <li>
                           <script>
-                            if (getUrlVar('model'))
-                              document.write("<a href='/setup/select-router/'>Select Router</a>")
+                            if (brand)
+                              document.write("<a href='/setup/select-brand/'>Change Brand</a>")
+                            else
+                              document.write("<span>Select Brand</span>")
+                          </script>
+                        </li>
+
+                        <li>
+                          <script>
+                            if (brand && model)
+                              document.write("<a href='/setup/select-router/?brand="+brand+"'>Change Router</a>")
                             else
                               document.write("<span>Select Router</span>")
                           </script>
                         </li>
                         <li>
                           <script>
-                            var model = getUrlVar('model')
-                            if (model && getUrlVar('make'))
-                              document.write("<a href='/setup/select-make/?model="+model+"'>Select Hardware Version</a>")
+                            if (brand && model && make)
+                              document.write("<a href='/setup/select-make/?brand="+brand+"&model="+model+"'>Change Hardware Version</a>")
                             else
                               document.write("<span>Select Hardware Version</span>")
                           </script>
                         </li>
                         <li>
                           <script>
-                            var model = getUrlVar('model')
-                            var make = getUrlVar('make')
-                            if (model && make && getUrlVar('mode'))
-                              document.write("<a href='/setup/install-or-update/?model="+model+"&make="+make+"'>Install or Update</a>")
+                            if (brand && model && make && mode)
+                              document.write("<a href='/setup/install-or-update/?brand="+brand+"&model="+model+"&make="+make+"'>Change Instruction Type</a>")
                             else
                               document.write("<span>Install or Update</span>")
                           </script>
@@ -147,8 +151,7 @@ img.bottom-space {
         </div>  
    </div>
  
- <div class="treeslider">
-  	<div class="content treecontent">
+ <div class="content">
 		{{content}}
      <div class="row">
         <div class="col-md-offset-3 col-md-6">
@@ -164,11 +167,14 @@ img.bottom-space {
         </div>
      </div>
   	</div>
- </div><!-- treeslider -->
 </div><!-- wrapper -->
 
 <script src="/js/jquery-ui.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
+<script src="/js/metisMenu.min.js"></script>
+<script src="/js/icheck.min.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/homer.js"></script>
 
 
 </body></html>
