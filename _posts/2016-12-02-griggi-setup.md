@@ -123,7 +123,9 @@ In case if one of the internet line goes down, all traffic starts to route throu
 <img src="/images/setup/set-metric.png" style="width: 400px"><br/>
 
 > To test if load balance is configured right, plug internet lines in both WAN & WWAN ports. 
+
 * Navigate to **Network** -> **Load Balance**
+
 > The Load Balance on router dashboard should show both interface green. 
 
 <img src="/images/setup/mwan-status.png" style="width: 400px"><br/>
