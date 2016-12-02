@@ -110,23 +110,21 @@ If you are not sure, try running speedtest & note upload and download values.
 
 #### 2. Configure Load Balance ####
 
-You can plug 2 internet lines to a Griggi router. The traffic gets divided on two lines based on metric that you set on each of the wan interface. Eg. if one interface support 100 Mbps speed & the other 10 Mbps, you should put metric 10 for 100 Mbps line & 1 for 10 Mbps line. 
+You can plug 2 internet lines to a Griggi router. The traffic gets divided on two lines based on metric(weight) that you set on each of the wan interface. Eg. if one interface support 100 Mbps speed & the other 10 Mbps, you should put metric 10 for 100 Mbps line & 1 for 10 Mbps line. 
 
 In case if one of the internet line goes down, all traffic starts to route through the other line. 
 
-> In Griggi router, the first LAN port (port marked 1) is the secondary WAN which we have named as WWAN.  
-
-* Navigate to **Network** -> **Load Balance**
-
-* Enable Load Balance on both wan & wwan interfaces inside **Configuration** tab. Click on Edit button for wan & wwan interfaces. 
-
-<img src="http://placehold.it/400x400" style="width: 400px"><br/>
+> In Griggi router Load Balancer is enabled by default. 
+> The first LAN port (port marked 1) is the secondary internet port which we have named as WWAN.
+> All you need to do is follow below steps to assign metrics to WAN and WWAN.
 
 * Setup interface metric by navigating to **Networks** -> **Interfaces** -> WAN/WWAN -> Advanced Settings . Set **Use gateway metric** for the appropriate metric value for the interface.
 
 <img src="/images/setup/set-metric.png" style="width: 400px"><br/>
 
-> To test if load balance is configured right, plug internet lines in both WAN & WWAN ports. The Load Balance on router dashboard should show both interface green. 
+> To test if load balance is configured right, plug internet lines in both WAN & WWAN ports. 
+* Navigate to **Network** -> **Load Balance**
+> The Load Balance on router dashboard should show both interface green. 
 
-<img src="http://placehold.it/400x400" style="width: 400px"><br/>
+<img src="/images/setup/mwan-status.png" style="width: 400px"><br/>
 
