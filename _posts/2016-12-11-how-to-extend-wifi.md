@@ -32,7 +32,11 @@ If you have a fairly dense wall setup, its best you put one cheap router convert
 
 ### AP setup - wired vs wireless
 
-The AP needs connection to main router through a ethernet wire or without it (wireless). **The wired setup has a significant advantage of high speed**. If you have an internet speed > 50-60 Mbps, you should go for wired setup as the traffic between router & AP will get throttled to that value because of the speed limit in 2.4 Ghz WiFi channel. You will be unable to hookup router & AP on 5 Ghz channel owing to the short distance the channel could support.  
+The AP needs connection to main router through a ethernet wire or without it (wireless). **The wired setup has a significant advantage of high speed**. 
+
+**1. No speed throttling between router & AP.** In wireless bridge setup, the router & AP are coupled through WiFi. WiFi signal could be in 2.4 Ghz or 5 Ghz band. 2.4 Ghz band is long range band but practically support data transmission < 30 Mbps. 5 Ghz band could support data transmission upto 100 Mbps but the range of this band is too small. So if your router & AP are positioned more than 10 meter, this coupling will not work.<br/>If you have internet connection of around 200 Mbps, the AP could still only talk to main router at 30 Mbps or 100 Mbps depending on which band is chosen for coupling.
+
+**2. Further speed reduction by half due to data duplication**. The AP essentially acts as bridge between all connected clients & routers. Lets say if there are 2 devices connected to AP & both of them are doing something bandwidth intensive. Assuming the best speed the AP could get between itself & router is 30 Mbps (2.4 Ghz coupling), it will only be able to give 15 Mbps to both clients combined as the traffic from the clients need to be re-broadcasted to the router. So the effective bandwidth available to all the clients combined is further reduced by half.  
 
 **The wireless setup has advantage that there is no issue of laying cable connecting the router to the AP**. Although, you need to ensure that an AP has WiFi reach from at least another AP which in-turn has access to the router (directly or through another AP). Else, you might have a set of APs that might be able to interact with each other but not able to send/receive traffic from the router. 
 
