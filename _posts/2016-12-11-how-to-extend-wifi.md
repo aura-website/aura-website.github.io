@@ -4,13 +4,35 @@ title: How to Setup Access Points to extend WiFi range
 excerpt: Access Point setup is needed to cover a space that can not be entirely covered by one WiFi device alone. This blog talks about setting up Access Points with a Griggi router but steps are generic enough & will work with any router.
 ---
 
-**Access Points** (also referred as **AP**) are devices that are hooked to the main router (through wire or wirelessly) & solely work to either extend WiFi network or support more number of devices than a single router/access point can support. 
 
-APs are also called **wireless or wired bridge** in more technical terms. 
+**Access Points** (also referred as **AP**) are devices that are hooked to the main router (through wire or wirelessly) & solely work to either extend WiFi network or support more number of devices than a single router/access point can support.
 
-Unlike office or large corporates or WiFi enabled institutes that have an extensive AP deployment, it can be done for small office or even your home. Typical usecase is your main router being set in a hall/room whose WiFi does not reach to yourroom that is upstairs. You could setup an AP somewhere between, hook it up wirelessly (or with wire) to the main router & eventually this AP will extend the WiFi for your rooms that were earlier could not be reached by your router.
+ 
+> APs are also called **wireless or wired bridge** in more technical terms. The wireless bridging is also termed **range extender** or **range expander**.<br/>The main router that is connected to internet is also called **internet gateway** or simply **gateway**. Since this is the single point of entry for internet, all check points like firewall etc go in here. In a bigger setup, this device is usually replaced by a **UTM (Unified Thread Management)** device (also referred as **hardware firewall**).  
 
-APs are dumb device that do only WiFi extending. All other network related things like IP assignment, traffic handling, NAT etc is done by the router itself. Some APs do provide a way to limit bandwidth at device level etc in enterprise grade APs, but guess that is something your network consultant will be able to guide you through. 
+<img src="/images/setup/AP-setup.png" style="width:600px"/><br/>
+
+In the image above, the router marked 'Wireless Access Point' is the AP connected through ethernet cable to the router which in turn is getting internet from outside. Devices like laptop or mobile phones can either connect to the WiFi of the router or that of the AP. 
+
+If you have WiFi reach problem in your office/home, you could get started with setting up APs to extend WiFi & the process is reasonably straight forward if you have couple of spare home routers lying around. They can be convered to APs very easily. 
+
+### New place networking checklist
+
+If you are setting up from scratch & the **space is fairly large/commercial**, it make sense to spend time doing some estimate as to 
+
+**1. How many devices would be connected simultaneously in worst case. This will help you decide which router/gateway to go for.** If number of people is going to be < 50, you are better off picking up a good consumer grade router & flashing an opensource OS like Openwrt, DD-wrt etc on it. They come with firewall built in & the OS usually is pretty stable & better than the stock/original OS.  
+
+A good candidate is **TP Link 1043ND** that costs around $60. For $150, **Ubiquiti Edgerouter Lite** is a good option too. Ubiquiti devices come with EdgeOS that are reasonably advanced & user-friendly. 
+
+> Stay away from big guys like Cisco, Aruba, Sonicwall, Cyberoam etc. Their devices are overpriced (for the same spec as that of Ubiquiti), are not user friendly & would require you to hire a sys-admin to manage it over time. You are better off using Ubiquiti EdgeMax series of routers that can easily support 1000 of users & at half the price of that of these big guys. 
+
+**2. Where to position APs to get maximum coverage & minimum interference** This exercise is something that network/IT consultants do for you as the activity is not straight forward. The point to remember is - APs do well in open environment but not in a walled environment as the WiFi signal does not penerate better. 
+
+Having said that - setting up too many APs in close vicinity will give rise to interference that is very hard to measure upfront. Also, if you are doing professional setup, you are picking up one of the enterprise APs that need to fixed on the wall/cieling & moving them later will going to be difficult task. 
+
+If you have the floor plan of your setup, you could send it to Ubiquiti folks at support@ubnt.com & they will be able to come back with suggestions in terms of how/where to setup AP. 
+
+You could also do exercise of generating WiFi heatmap. Download the software from [http://www.netspotapp.com/](http://www.netspotapp.com/), upload your floor map & then you need to click 3 points on the map while taking your laptop to the position. It will generate the WiFi heatmap. Even ubiquiti folks might ask you to send them the heatmap. 
 
 ### Types of APs
 
@@ -51,6 +73,8 @@ In the setup where each AP is directly/indirectly connected to the main router t
 
 **2.** The AP comes with a **poe power injector** which is the source of power for the AP. The wire from the router need to terminate on this device & from the other side, another cable will then go to the AP. There is a power plug on this device that you need to plug in to a power source. 
 
+<img src="/images/setup/poe-injector.png" style="width:600px"/><br/>
+
 **3.** Plug the cable from the poe power injector to the AP. Most APs come with single ethernet port. If there are multiple, you need to figure out which one it needs plugging into. 
 
 **4.** These APs come with their own wireless controller from which you could setup the WiFi SSID & password etc. 
@@ -59,7 +83,9 @@ In the setup where each AP is directly/indirectly connected to the main router t
 
 **1.** Switch on the router & connect to its WiFi. If it is a new router, its WiFi password is at the back sticker of the router.
 
-**2.** Login to the router dashboard (again the username password for a new router is at the back sticker), locate the LAN interface & give a static IP in the same subnet as that of your main router. <br/><br/>For eg. if your main router's IP is 192.168.1.1, that means every device connecting to the router will get 192.168.1.x IP. You could give 192.168.1.2 IP to this AP.  
+**2.** Login to the router dashboard. The router dashboard usually is at http://192.168.0.1 or http://192.168.1.1 . The login credentials are usually at the back of the sticker. Locate the LAN interface & give a static IP in the same subnet as that of your main router. <br/><br/>For eg. if your main router's IP is 192.168.1.1, that means every device connecting to the router will get 192.168.1.x IP. You could give 192.168.1.2 IP to this AP.<br/>
+
+> For Griggi, the IP address of APs need to be in 192.168.7.x subnet. The instructions are under **Testing APs under Griggi Setup** below.
 
 **3.** Disable DHCP. Ideally, you want all the traffic to be routed to the main router, hence this step. 
 
@@ -112,7 +138,7 @@ If you have Griggi on your main router, you can follow these additional steps to
 
 There could be following issues :-
 
-**1. Connection gets stuck at 'obtaining IP address'** 
+**1. WiFi stuck at 'obtaining IP address'** 
 
 If you try connecting your device to the WiFi & it shows 'obtaining IP address' for quite sometime & then drops the WiFi connection off. This problem is because the AP to which you are connecting is unable to get IP address from the main router. Since you have disabled DHCP on the AP, the AP can not give IP address anymore. 
 
