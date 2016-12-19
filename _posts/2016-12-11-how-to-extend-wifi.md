@@ -16,23 +16,8 @@ In the image above, the router marked 'Wireless Access Point' is the AP connecte
 
 If you have WiFi reach problem in your office/home, you could get started with setting up APs to extend WiFi & the process is reasonably straight forward if you have couple of spare home routers lying around. They can be convered to APs very easily. 
 
-### New place networking checklist
+> If you are just starting with network/internet setup & need help figuring out which gateway, AP & other devices to buy, head over to [A-Z network setup guide](https://www.linkedin.com/pulse/a-z-network-setup-dubara-mat-poochna-ashish-pocha-sharma)
 
-If you are setting up from scratch & the **space is fairly large/commercial**, it make sense to spend time doing some estimate as to 
-
-**1. How many devices would be connected simultaneously in worst case. This will help you decide which router/gateway to go for.** If number of people is going to be < 50, you are better off picking up a good consumer grade router & flashing an opensource OS like Openwrt, DD-wrt etc on it. They come with firewall built in & the OS usually is pretty stable & better than the stock/original OS.  
-
-A good candidate is **TP Link 1043ND** that costs around $60. For $150, **Ubiquiti Edgerouter Lite** is a good option too. Ubiquiti devices come with EdgeOS that are reasonably advanced & user-friendly. 
-
-> Stay away from big guys like Cisco, Aruba, Sonicwall, Cyberoam etc. Their devices are overpriced (for the same spec as that of Ubiquiti), are not user friendly & would require you to hire a sys-admin to manage it over time. You are better off using Ubiquiti EdgeMax series of routers that can easily support 1000 of users & at half the price of that of these big guys. 
-
-**2. Where to position APs to get maximum coverage & minimum interference** This exercise is something that network/IT consultants do for you as the activity is not straight forward. The point to remember is - APs do well in open environment but not in a walled environment as the WiFi signal does not penerate better. 
-
-Having said that - setting up too many APs in close vicinity will give rise to interference that is very hard to measure upfront. Also, if you are doing professional setup, you are picking up one of the enterprise APs that need to fixed on the wall/cieling & moving them later will going to be difficult task. 
-
-If you have the floor plan of your setup, you could send it to Ubiquiti folks at support@ubnt.com & they will be able to come back with suggestions in terms of how/where to setup AP. 
-
-You could also do exercise of generating WiFi heatmap. Download the software from [http://www.netspotapp.com/](http://www.netspotapp.com/), upload your floor map & then you need to click 3 points on the map while taking your laptop to the position. It will generate the WiFi heatmap. Even ubiquiti folks might ask you to send them the heatmap. 
 
 ### Types of APs
 
@@ -68,6 +53,16 @@ The AP needs connection to main router through a ethernet wire or without it (wi
 In the setup where each AP is directly/indirectly connected to the main router through ethernet cable, you could set different SSID & password on each AP. This approach has both its pros & cons. It looks more professional to have one single WiFi across your whole setup. But if you have different SSIDs, it is easy to pin point to an AP if any problem occurs. 
 
 **Steps to setup Enterprise AP :-**
+
+Enterprise APs usually need mounting on ceiling/wall. So their location need to be pre-decided. This is a difficult exercise but it has to be done right.  
+
+Positioning APs too far might lead to blind spots. Setting up too many APs in close vicinity will give rise to interference that is very hard to measure upfront. Also, moving these APs later is going to be difficult task.
+
+If you have the floor plan of your setup, you could send it to Ubiquiti folks at support@ubnt.com & they will be able to come back with suggestions in terms of how/where to setup AP. 
+
+You could also do exercise of generating WiFi heatmap. Download the software from [http://www.netspotapp.com/](http://www.netspotapp.com/), upload your floor map & then you need to click 3 points on the map while taking your laptop to the position. It will generate the WiFi heatmap. Even ubiquiti folks might ask you to send them the heatmap. 
+
+Once the location is decided, you need to follow the following steps to install the AP. 
 
 **1.** Mount the AP on the wall or ceiling at appropriate place.
 
@@ -108,6 +103,8 @@ Usually this setup is preferred with the cheap home router turned AP, typically 
 **1.** Switch on the router that you are going to convert to AP & connect to its WiFi . If it is a newly bought device, the WiFi password is usually at the back sticker of the router. The admin dashboard is usually at either 192.168.0.1 or 192.168.1.1 . The admin username password is also on the back sticker.  
 
 **2.** Same as that of wired AP, the LAN IP of this device need to be made pre-defined/static. The IP need to be in the main router subnet. Eg. if the main router IP is 192.168.1.1, you could assign 192.168.1.2 to this AP. Note that all APs need in the network need to have different but static IP.
+
+> For Griggi, the IP address of APs need to be in 192.168.7.x subnet. The instructions are under **Testing APs under Griggi Setup** below.
 
 **3.** In the AP dashboard, disable DHCP, so that IP assignment etc will only happen from the main router. 
 
