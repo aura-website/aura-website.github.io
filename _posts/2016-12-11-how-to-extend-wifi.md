@@ -72,21 +72,20 @@ Once the location is decided, you need to follow the following steps to install 
 
 **3.** Plug the cable from the poe power injector to the AP. Most APs come with single ethernet port. If there are multiple, you need to figure out which one it needs plugging into. 
 
-**4.** These APs come with their own wireless controller from which you could setup the WiFi SSID & password etc. 
+**4.** These APs come with their own wireless controller from which you could setup the WiFi SSID & password etc. Refer the AP manual for more information.  
 
 **Steps to convert home router to AP**
 
 **1.** Switch on the router & connect to its WiFi. If it is a new router, its WiFi password is at the back sticker of the router.
 
-**2.** Login to the router dashboard. The router dashboard usually is at http://192.168.0.1 or http://192.168.1.1 . The login credentials are usually at the back of the sticker. Locate the LAN interface & give a static IP in the same subnet as that of your main router. <br/><br/>For eg. if your main router's IP is 192.168.1.1, that means every device connecting to the router will get 192.168.1.x IP. You could give 192.168.1.2 IP to this AP.<br/>
+**2.** Login to the router dashboard. The router dashboard usually is at http://192.168.0.1 or http://192.168.1.1 . The login credentials are usually at the back of the sticker. Locate the **LAN interface** inside **Network Settings** & give a static IP in the same subnet as that of your main router. <br/><br/>For eg. if your main router's IP is 192.168.1.1, that means every device connecting to the router will get 192.168.1.x IP. You could give 192.168.1.2 IP to this AP. Give separate/unique IP to each AP.<br/>
 
 > For Griggi, the IP address of APs need to be in 192.168.7.x subnet. The instructions are under **Testing APs under Griggi Setup** below.
 
-**3.** Disable DHCP. Ideally, you want all the traffic to be routed to the main router, hence this step. 
+**3.** Locate DHCP setting on the dashboard & disable DHCP. Ideally, you want all the traffic to be routed to the main router, hence this step. After this point, if you need to access the AP router dashboard, you need to connect to the any WiFi in the setup & access the IP that you have setup for this AP in step 2. 
 
 **4.** Run an ethernet cable from **LAN port of your main router** & connect to the **LAN port of this newly turned AP**.
 
-> Remember that the AP will always be accessible on the IP that you had set for it (which in this case is 192.168.1.2) . So if you need to change the WiFi SSID, password or anything else, type this IP while connected to the router or any other AP, to get onto this AP dashboard.
 
 **Testing wired AP setup** 
 
@@ -102,15 +101,19 @@ Usually this setup is preferred with the cheap home router turned AP, typically 
 
 **1.** Switch on the router that you are going to convert to AP & connect to its WiFi . If it is a newly bought device, the WiFi password is usually at the back sticker of the router. The admin dashboard is usually at either 192.168.0.1 or 192.168.1.1 . The admin username password is also on the back sticker.  
 
-**2.** Same as that of wired AP, the LAN IP of this device need to be made pre-defined/static. The IP need to be in the main router subnet. Eg. if the main router IP is 192.168.1.1, you could assign 192.168.1.2 to this AP. Note that all APs need in the network need to have different but static IP.
+**2.** Same as that of wired AP, locate the **LAN IP** inside **Network** settings of this device need to be made pre-defined/static. The IP need to be in the main router subnet. Eg. if the main router IP is 192.168.1.1, you could assign 192.168.1.2 to this AP. Note that all APs need in the network need to have different but static IP.<br/>After this step, the router dashboard will be accessible at this IP.
 
 > For Griggi, the IP address of APs need to be in 192.168.7.x subnet. The instructions are under **Testing APs under Griggi Setup** below.
 
-**3.** In the AP dashboard, disable DHCP, so that IP assignment etc will only happen from the main router. 
 
-**4.** Under Wireless section, look for **WDS bridging** option. WDS lets you wireless pair this device with the WiFi of any other AP or that of the router. Enable it. There should be an option to survey/scan for available network. Select your own network to pair up.  
+**3.** Under Wireless section, look for **WDS bridging** option. WDS lets you wireless pair this device with the WiFi of any other AP or that of the router. Enable it. There should be an option to survey/scan for available network. Select the WiFi of the main router to pair up. You would need to provide password of the main router WiFi once you select it for extending.
 
 <img src="/images/setup/wds-bridging.png" style="width:800px"/><br/>
+
+
+**4.** Connect to the AP & your internet will still not work. The last step is to disable DHCP on the AP. Access its dashboard & under DHCP setting, disable DHCP. Post disabling, the AP will reboot. Connect to its WiFi again & check if your internet is working. 
+
+**5.** If you intend to change the WiFi name or password (possibly to match that of the main router), do it now. 
 
 > If you are using a TP Link router, more elaborate instructions are at [http://www.tp-link.com/us/faq-440.html](http://www.tp-link.com/us/faq-440.html)
 
