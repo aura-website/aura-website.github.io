@@ -43,11 +43,11 @@ Post login, locate the **firmware upgrade** page as shown below. Upload the firm
  <p>Feel free to email us at team.griggi@gmail.com if you need any personalized help.</p>
 </div>
 
-<img src="http://dslrcontroller.com/guide-wifi_mr3040/setup-flash.png" style="width: 600px"><br/> 
+<img src="http://dslrcontroller.com/guide-wifi_mr3040/setup-flash.png" style="width: 800px"><br/> 
 
 **Note** - if you are updating Griggi, your dashboard is at *http://192.168.7.1*. Username is root & password is what you had set earlier. You then need to head to **System** -> **Backup / Flash Firmware** option. Under **Flash new Firmware image**, upload the image, **keep settings checked** & just do it :-). 
 
-<img src="/images/setup/flash-firmware-openwrt.png" style="width: 600px"><br/> 
+<img src="/images/setup/flash-firmware-openwrt.png" style="width: 800px"><br/> 
 
 Post flasing the new firmware, your router will reboot. Wait for the WiFi to come back up. There is a WiFi named **griggi** to which you can go ahead & connect.
 
