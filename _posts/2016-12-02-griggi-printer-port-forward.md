@@ -31,11 +31,36 @@ Once done, reboot the router for the change to take effect. To test, go to the d
 
 You might have an internal server that need to be accessed from outside your setup. This applies to **CCTV camera** as well where you need to access camera from outside. 
 
+**1. Setup private IP**
+
 For it to work, you first need to assign a static private IP to the devices based on their mac address & then do a port forward to the specified IP address. 
+
+Get mac addresses of all the devices & provide static ip by creating a file `/etc/ethers` in the router. The file content should look like below
+
+<blockquote>
+<pre>
+# ecce - Dell Vostro 200 ST
+xx:xx:xx:xx:xx:xx 192.168.7.2
+
+# cadwal - Compaq Presario SR1505LA
+xx:xx:xx:xx:xx:xx 192.168.7.3
+
+# throy - Acer Aspire 4320
+xx:xx:xx:xx:xx:xx 192.168.7.4
+</pre>
+</blockquote>
+
+Note xx:xx:xx:xx:xx is the mac address of the devices. Ensure the IP is in `192.168.7.x` subnet only. 
+
+> Once the above setting is done, reboot the router. Check if the setting is working as the device should get the IP address specified for it in the /etc/ethers file 
+
+**2. Forward external port to your device port**
+
+You need to make your server/CCTV accessible from outside. You need to create a port forward rule for Griggi router port to forward connection to your device (internal) IP & the port on which it listens for connection.
 
 Eg - if you assign a private IP 192.168.7.2 to CCTV camera & your CCTV camera is accessible at port 8080, then you need to setup port forward on the router for router IP port 80 to 192.168.7.2 8080 
 
-Follow the steps at [https://wiki.openwrt.org/doc/howto/port.forwarding](https://wiki.openwrt.org/doc/howto/port.forwarding). You need to edit the `/etc/config/firewall` file with the part below
+Follow the steps at [https://wiki.openwrt.org/doc/howto/port.forwarding](https://wiki.openwrt.org/doc/howto/port.forwarding). You need to **add** the block specified below in `/etc/config/firewall` file
 
 <blockquote>
 <pre>
