@@ -1,18 +1,24 @@
 ---
 layout: post
-title: How to get the max speed out of 2.4Ghz access points/routers
-excerpt: You may still have quite a few old WiFi access points/routers. Get the best out of them by following these steps.
+title: How to get the max speed out of WiFi access points/routers
+excerpt: Get the best speed by following these steps.
 ---
 
-Your WiFi AP/router has a setting called **WiFi channel**. 
+WiFi routers has a setting called **WiFi channel**. 
 
 <img src="/images/setup/wifi-channel.png" style="width: 600px"><br/>
+
+Most appropriate values to be put is either 1, 6 or 11. Because only these 3 values are non-interfering with each other.
+
+You can see this using a simple mobile app called WiFi Analyzer. Open this app and it will show you the channels of all nearby WiFi routers.
 
 Ensure that you get the 3 non-intersecting domes as seen below by selecting either of 1,6,11 channel numbers. Unfortunately by default all APs have set this to auto which causes interference with other channels.
 
 Try to get as close to IDEAL as possible by following this on all your WiFi APs/routers.
 
 This can make difference between 2 Mpbs and 70 Mbps.
+
+This problem is more pronounced in 2.4Ghz WiFi compared to 5Ghz, because 5Ghz has lot many non-interference channels available.
 
 #### IDEAL ####
 
