@@ -24,6 +24,8 @@ This can make difference between 2 Mpbs and 70 Mbps.
 
 This problem is more pronounced in 2.4Ghz WiFi compared to 5Ghz, because 5Ghz has lot many non-interference channels available.
 
+<img src="/images/setup/5g-vs-2.4g.png" style="width: 600px"><br/>
+
 #### IDEAL ####
 
 Notice how cleanly non-intersecting all 3 domes are.
