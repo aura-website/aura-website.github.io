@@ -1,8 +1,10 @@
 ---
-published: true
+layout: post
+title: Top 5 reasons users complain of bad internet in CoWorking space
+excerpt: Nail down following 5 topmost reasons for sucky internet.
 ---
 
-![Screenshot 2019-08-02 17.31.03.png]({{site.baseurl}}/_posts/Screenshot 2019-08-02 17.31.03.png)
+<img src="/images/setup/out-of-order.png" style="width: 300px"><br/>
 
 
 As every co-working space owner knows, keeping the damn WiFi running all the time isn't exactly a piece of cake.
