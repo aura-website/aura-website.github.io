@@ -17,7 +17,7 @@ As I am helping manage some of them I find below reasons frequently popping up, 
 Best of the ISPs go down at least once a week. Once used only in "enterprise", multi-WAN is a basic necessity in 2019.
 A multi-WAN router will auto handle individual ISP outages and provide seamless internet to users.
 
-A quick note on multi-wan router is here : http://bit.ly/multiwan
+A quick note on multi-wan router is here : [link to Linkedin Post!](http://bit.ly/multiwan) 
 
 ## 2. Your WiFi routers are not optimally placed
 
